@@ -1,0 +1,345 @@
+/*-----------------
+       共通
+-----------------*/
+body {
+  font-family: serif;
+  color: black;
+  background-color: rgb(247, 228, 216);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  width: 100%;
+}
+
+.fadein {
+  opacity: 0;
+  transform: translate(0, 200px);
+  transition: 1s;
+}
+
+.fadein.show {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+section {
+  padding-bottom: 200px;
+}
+
+.section-title {
+  color: white;
+  font-size: 3rem;
+  font-family: "Lancelot", cursive;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  border: solid 1px white;
+  transform: rotate(45deg);
+
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/*-----------------
+       header
+-----------------*/
+.header {
+  opacity: 0;
+  transition: 1s;
+}
+
+.header.show {
+  opacity: 1;
+}
+
+.logo {
+  color: white;
+  font-family: "Lancelot", cursive;
+  writing-mode: vertical-rl;
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  z-index: 30;
+}
+
+.hamburger {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  z-index: 50;
+}
+
+.hamburger span {
+  width: 40px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: 5px;
+  transition: 0.5s;
+}
+
+.hamburger span:nth-child(1) {
+  top: 15px;
+}
+
+.hamburger span:nth-child(2) {
+  top: 25px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 35px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 25px;
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 25px;
+}
+
+/* nav */
+.nav {
+  width: 250px;
+  height: 100vh;
+  background-color: rgb(121, 180, 176);
+  position: fixed;
+  top: 0;
+  right: -250px;
+  padding: 200px 50px;
+  z-index: 40;
+
+  opacity: 0;
+  transition: 1s;
+}
+
+.nav.active {
+  opacity: 1;
+  right: 0;
+}
+
+.nav a {
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Lancelot", cursive;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/*-----------------
+        main
+-----------------*/
+main {
+  text-align: center;
+}
+
+/* mainvisual */
+.top {
+  height: 120vh;
+  padding-top: 100px;
+  background-color: black;
+}
+
+.mainvisual {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mainvisual img {
+  width: 30%;
+}
+
+/* fadeinするやつ */
+.pink {
+  background-color: rgb(247, 228, 216);
+}
+
+.site-title {
+  width: 100%;
+  padding: 200px 0 300px;
+  text-align: center;
+}
+
+.site-title .hello {
+  font-size: 3rem;
+  font-family: "Lancelot", cursive;
+  color: white;
+}
+
+.site-title .event-title {
+  font-size: 5rem;
+  font-family: "Lancelot", cursive;
+}
+
+/*-----------------
+    information
+-----------------*/
+#information .date {
+  font-size: 3rem;
+}
+
+#information .place {
+  font-size: 2rem;
+}
+
+/*-----------------
+    gallery
+-----------------*/
+#gallery {
+  width: 60%;
+  margin: auto;
+  padding-bottom: 200px;
+}
+
+#gallery img {
+  width: 45%;
+  margin: 20px 0;
+  box-shadow: 9px 9px rgb(247, 228, 216), 10px 10px white;
+}
+
+#gallery li:nth-child(odd) {
+  text-align: left;
+}
+
+#gallery li:nth-child(even) {
+  text-align: right;
+}
+
+/*-----------------
+    access
+-----------------*/
+#access {
+  padding: 200px 0 0;
+  color: white;
+  position: relative;
+  z-index: 20;
+}
+
+#access .place {
+  font-size: 2rem;
+}
+
+#access .address {
+  margin-bottom: 30px;
+}
+
+#access .map {
+  padding: 20px 40px;
+  border: solid 1px white;
+}
+
+#access a {
+  color: white;
+}
+
+.bg {
+  background: url("../img/bg.jpg") center center !important;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 10;
+}
+
+.bg.show {
+  opacity: 1;
+}
+
+/*-----------------
+    contact
+-----------------*/
+#contact {
+  padding-top: 400px;
+}
+
+#contact a {
+  width: 400px;
+  padding: 40px 0;
+  margin-bottom: 20px;
+  display: inline-block;
+  border: solid 1px black;
+  position: relative;
+}
+
+#contact a::before,
+#contact a::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  height: 1.2px;
+  background-color: black;
+}
+
+#contact a::before {
+  width: 120px;
+  top: 50px;
+}
+
+#contact a::after {
+  width: 15px;
+  top: 47px;
+  transform: rotate(25deg);
+}
+
+/*-----------------
+    footer
+-----------------*/
+footer {
+  padding: 50px 50px 20px;
+  background-color: rgb(255, 250, 245);
+  color: rgb(121, 180, 176);
+  text-align: right;
+}
+
+footer .footer-logo {
+  font-size: 1.8rem;
+  font-family: "Lancelot", cursive;
+  margin-bottom: 10px;
+}
+
+footer .address {
+  font-size: 0.8rem;
+}
+
+footer .sns {
+  margin: 30px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  font-family: "Lancelot", cursive;
+}
+
+footer a {
+  color: rgb(121, 180, 176);
+}
+
+footer .copy {
+  font-size: 0.8rem;
+  text-align: left;
+}
